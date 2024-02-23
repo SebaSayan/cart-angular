@@ -13,11 +13,21 @@ import { CartItem } from './cart.model';
 
 export class CartComponent implements OnInit {
   cartItems: CartItem[] = [];
+  totalItems: number = 0;
 
   constructor(private cartService: CartService) {}
 
   ngOnInit(): void {
+    this.getCartItemsAndUpdateTotal();
+  }
+
+  getCartItemsAndUpdateTotal(): void {
     this.cartItems = this.cartService.getCartItems();
+    this.calculateTotalItems();
+  }
+
+  calculateTotalItems(): void {
+    this.totalItems = this.cartItems.reduce((total, item) => total + item.quantity, 0);
   }
 
   getTotal(): number {
@@ -26,11 +36,13 @@ export class CartComponent implements OnInit {
 
   incrementQuantity(item: CartItem): void {
     item.quantity++;
+    this.getCartItemsAndUpdateTotal();
   }
 
   decrementQuantity(item: CartItem): void {
     if (item.quantity > 1) {
       item.quantity--;
+      this.getCartItemsAndUpdateTotal();
     }
   }
 
@@ -38,6 +50,12 @@ export class CartComponent implements OnInit {
     const index = this.cartItems.indexOf(item);
     if (index !== -1) {
       this.cartItems.splice(index, 1);
+      this.getCartItemsAndUpdateTotal();
     }
   }
+
+  getTotalQuantity(): number {
+    return this.cartItems.reduce((total, item) => total + item.quantity, 0);
+  }
+
 }

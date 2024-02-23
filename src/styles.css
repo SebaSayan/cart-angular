@@ -21,6 +21,10 @@ h1 {
     padding: 3rem 0 0 2.4rem;
 }
 
+h2 {
+    padding: 3rem 0 0 0;
+}
+
 section {
     display: flex;
 }
@@ -29,6 +33,7 @@ section {
 button {
     position: relative;
     z-index: 10;
+    margin-bottom: 5px;
     background: rgb(247, 151, 29);
     border: 2px solid black;
     border-radius: 5px;
@@ -44,5 +49,11 @@ button:hover {
 @media screen and (max-width: 1550px) {
     body {
         margin: 20px 20px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    body {
+        margin: 20px 5px;
     }
 }
