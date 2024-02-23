@@ -7,38 +7,8 @@ import { CartItem } from './cart.model';
   selector: 'app-cart',
   standalone: true,
   imports: [CommonModule],
-  template: `
-    <h2>Panier</h2>
-    <div class="container-cart">
-      <div class='item-container'>
-        <div class="item" *ngFor="let item of cartItems">
-    
-          <div class="img-cart-container">
-            <img class='cart-img' [src]="item.product.img" [alt]="item.product.description">
-          </div>
-    
-          <div class="item-description">
-            <h4>{{ item.product.description }}</h4>
-            <p>{{ item.product.price * item.quantity}}€</p>
-            <h6>Quantité : {{ item.quantity }}</h6>
-          </div>
-
-          <div class="cart-icons">
-            <button class='add-item' (click)="incrementQuantity(item)">+</button>
-            <button class='sub-item' (click)="decrementQuantity(item)">-</button>
-            <button class='remove-item-cart' (click)="removeItem(item)">X</button>
-          </div>
-        </div>
-      </div>
-      <div class="total">
-        <div>
-          <h2>Total</h2>
-          <h2>{{ getTotal() }}€</h2>
-        </div>
-
-      </div>
-    </div>
-  `
+  templateUrl: './cart.component.html',
+  styleUrl: './cart.component.css'
 })
 
 export class CartComponent implements OnInit {

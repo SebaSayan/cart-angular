@@ -7,27 +7,8 @@ import { Product } from './product.model';
   selector: 'app-product',
   standalone: true,
   imports: [CommonModule],
-  template: `
-  <div>
-    <h1>Articles</h1>
-      <div class="card-container">
-        <div *ngFor="let product of products" class="card">
-          <div class="img-container">
-            <img [src]="product.img" [alt]="product.description">
-          </div>
-          <div class="card-text">
-            <h3>{{ product.description }}</h3>
-            <span>{{ product.price}}€</span>
-          </div>
-            <div class="add-to-cart">
-              <button (click)="addToCart(product)">
-                Ajouter au panier
-              </button>
-            </div>
-        </div>
-      </div>
-  </div>
-  `
+  templateUrl: './product.component.html',
+  styleUrl: './product.component.css'
 })
 export class ProductComponent implements OnInit {
   products: Product[] = [

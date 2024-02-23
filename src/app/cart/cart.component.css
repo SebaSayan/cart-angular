@@ -1,0 +1,25 @@
+.container-cart {
+    display: flex;
+}
+
+.item-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-img {
+    width: 100px;
+    height: 70px;
+}
+
+.add-item,
+.sub-item,
+.remove-item-cart {
+    font-weight: bold;
+    font-size: 1rem;
+    width: 25px;
+}
+
+.total {
+    margin: 0 20px;
+}
