@@ -1,7 +1,18 @@
 <div>
     <h1>Articles</h1>
+    <div class="product-list">
+        <div class="dropdown">
+            <button class="dropbtn">Catégories</button>
+            <div class="dropdown-content">
+                <button (click)="filterProducts('all')">Tous</button>
+                <button (click)="filterProducts('Clavier')">Claviers</button>
+                <button (click)="filterProducts('Souris')">Souris</button>
+                <button (click)="filterProducts('Casque')">Casques</button>
+            </div>
+        </div>
+    </div>
     <div class="card-container">
-        <div *ngFor="let product of products" class="card">
+        <div *ngFor="let product of filteredProducts" class="card">
             <div class="img-container">
                 <img [src]="product.img" [alt]="product.description">
             </div>

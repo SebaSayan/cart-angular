@@ -14,6 +14,6 @@ import { CartComponent } from './cart/cart.component';
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  title = 'AlloExpress';
-  logoUrl = '../assets/pictures/alloexpress.png';
+  title = 'GeekSpace';
+  logoUrl = '../assets/pictures/geekspace.png';
 }

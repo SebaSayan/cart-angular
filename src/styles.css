@@ -10,10 +10,10 @@
 
 body {
     margin: 20px auto;
-    background: rgba(250, 218, 171, 0.8);
+    background: rgba(220, 220, 220, 0.8);
     padding-bottom: 4rem;
     color: #333;
-    max-width: 1500px;
+    max-width: 1250px;
     overflow-x: hidden;
 }
 
@@ -27,23 +27,6 @@ h2 {
 
 section {
     display: flex;
-}
-
-
-button {
-    position: relative;
-    z-index: 10;
-    margin-bottom: 5px;
-    background: rgb(247, 151, 29);
-    border: 2px solid black;
-    border-radius: 5px;
-    padding: 3px 5px;
-    transition: 0.4s;
-}
-
-button:hover {
-    background-color: rgb(252, 101, 0);
-
 }
 
 @media screen and (max-width: 1550px) {

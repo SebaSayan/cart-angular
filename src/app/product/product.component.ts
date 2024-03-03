@@ -8,89 +8,112 @@ import { Product } from './product.model';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './product.component.html',
-  styleUrl: './product.component.css'
+  styleUrl: './product.component.css',
 })
 export class ProductComponent implements OnInit {
   products: Product[] = [
     {
       id: 1,
+      categorie: 'Clavier',
       description: 'Clavier Asus',
       price: 290,
       img: '../../assets/pictures/asus.jpg',
     },
     {
       id: 2,
+      categorie: 'Clavier',
       description: 'Clavier Corsair',
       price: 69,
       img: '../../assets/pictures/corsair.jpg',
     },
     {
       id: 3,
+      categorie: 'Clavier',
       description: 'Clavier Empire Gaming',
       price: 20,
       img: '../../assets/pictures/empiregaming.jpg',
     },
     {
       id: 4,
+      categorie: 'Clavier',
       description: 'Clavier Glab',
       price: 25,
       img: '../../assets/pictures/glab.jpg',
     },
     {
       id: 5,
-      description: 'Clavier KLIM',
-      price: 35,
-      img: '../../assets/pictures/klim.jpg',
+      categorie: 'Souris',
+      description: 'Souris Logitech',
+      price: 56,
+      img: '../../assets/pictures/mouse-logitech-G502.jpg',
     },
     {
       id: 6,
-      description: 'Clavier Logitech',
-      price: 64,
-      img: '../../assets/pictures/logi.jpg',
+      categorie: 'Souris',
+      description: 'Souris Razer',
+      price: 59,
+      img: '../../assets/pictures/mouse-razer-basilisk.jpg',
     },
     {
       id: 7,
-      description: 'Clavier Logitech ',
-      price: 150,
-      img: '../../assets/pictures/logi2.jpg',
+      categorie: 'Souris',
+      description: 'Souris Steel Series',
+      price: 30,
+      img: '../../assets/pictures/mouse-steelseries-rival3.jpg',
     },
     {
       id: 8,
-      description: 'Clavier Razer',
-      price: 49,
-      img: '../../assets/pictures/razer.jpg',
+      categorie: 'Souris',
+      description: 'Souris Asus',
+      price: 149,
+      img: '../../assets/pictures/mouse-asus-spatha.jpg',
     },
     {
       id: 9,
-      description: 'Clavier Rii',
-      price: 30,
-      img: '../../assets/pictures/rii.jpg',
+      categorie: 'Casque',
+      description: 'Casque Hyper X',
+      price: 99,
+      img: '../../assets/pictures/casque-hyperX-cloud2.jpg',
     },
     {
-        id: 10,
-        description: 'Clavier Roccat',
-        price: 29,
-        img: '../../assets/pictures/roccat.jpg',
+      id: 10,
+      categorie: 'Casque',
+      description: 'Casque Logitech',
+      price: 29,
+      img: '../../assets/pictures/casque-logitech-gprox.jpg',
     },
     {
-        id: 11,
-        description: 'Clavier Thomson',
-        price: 87,
-        img: '../../assets/pictures/thomson.jpg',
+      id: 11,
+      categorie: 'Casque',
+      description: 'Casque JBL',
+      price: 59,
+      img: '../../assets/pictures/casque-jbl-quantum400.jpg',
     },
     {
-        id: 12,
-        description: 'Clavier Trust',
-        price: 49,
-        img: '../../assets/pictures/trust.jpg',
+      id: 12,
+      categorie: 'Casque',
+      description: 'Casque Razer',
+      price: 116,
+      img: '../../assets/pictures/casque-razer-kraken.jpg',
+    },
+  ];
+
+  filteredProducts: Product[] = [];
+
+  constructor(private cartService: CartService) {}
+
+  ngOnInit(): void {
+    this.filteredProducts = [...this.products];
+  }
+
+  addToCart(product: Product): void {
+    this.cartService.addToCart(product);
+  }
+  filterProducts(category: string): void {
+    if (category === 'all') {
+      this.filteredProducts = [...this.products]; 
+    } else {
+      this.filteredProducts = this.products.filter(product => product.categorie === category);
     }
-]
-constructor(private cartService: CartService) {}
-
-ngOnInit(): void {}
-
-addToCart(product: Product): void {
-  this.cartService.addToCart(product);
+  }
 }
-}
-

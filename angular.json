@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "AlloExpress": {
+    "GeekSpace": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/allo-express",
+            "outputPath": "dist/geek-space",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -57,10 +57,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "AlloExpress:build:production"
+              "buildTarget": "GeekSpace:build:production"
             },
             "development": {
-              "buildTarget": "AlloExpress:build:development"
+              "buildTarget": "GeekSpace:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -68,7 +68,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "AlloExpress:build"
+            "buildTarget": "GeekSpace:build"
           }
         },
         "test": {

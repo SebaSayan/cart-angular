@@ -1,7 +1,6 @@
 <div class="cart-header">
-    <h2>Panier</h2>
-    <div class="bubble-cart" id="bubbleCart">{{ getTotalQuantity() }}</div>
     <div class="cart-container">
+        <h2>Panier</h2>
         <div class='item-container'>
             <div class="item" *ngFor="let item of cartItems">
 
@@ -12,13 +11,14 @@
                 <div class="item-description">
                     <h4>{{ item.product.description }}</h4>
                     <p>{{ item.product.price * item.quantity}}€</p>
-                    <h6>Quantité : {{ item.quantity }}</h6>
                 </div>
-
-                <div class="cart-icons">
-                    <button class='add-item' (click)="incrementQuantity(item)">+</button>
-                    <button class='sub-item' (click)="decrementQuantity(item)">-</button>
-                    <button class='remove-item-cart' (click)="removeItem(item)">X</button>
+                <div class="item-quantity">
+                    <h6>Quantité : {{ item.quantity }}</h6>
+                    <div class="cart-icons">
+                        <i class="fa fa-plus" (click)="incrementQuantity(item)"></i>
+                        <i class="fa fa-minus" (click)="decrementQuantity(item)"></i>
+                        <i class="fa fa-trash" (click)="removeItem(item)"></i>
+                    </div>
                 </div>
             </div>
         </div>
@@ -26,4 +26,5 @@
             <h3>Total</h3>
             <h3>{{ getTotal() }}€</h3>
         </div>
+        <h6 class="total-articles"> Total articles : {{ getTotalQuantity() }}</h6>
     </div>

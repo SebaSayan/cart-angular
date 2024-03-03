@@ -1,77 +1,165 @@
-.card-container {
-    margin: 0 20px;
-    display: flex;
-    flex-wrap: wrap;
-}
+ .product-list {
+     display: flex;
+     margin: 0 0 0 20px;
+ }
 
-.card {
-    margin: 0.4rem 1rem 0.4rem 0;
-    background: rgb(255, 255, 255);
-    border-radius: 4px;
-    overflow: hidden;
-    position: relative;
-    box-shadow: 0 0px 6px rgba(51, 51, 51, 0.15);
-    transition: 0.2s ease;
-    width: 202px;
-}
+ .dropdown {
+     position: relative;
+     display: inline-block;
+ }
 
-@media screen and (max-width: 600px) {
-    .card {
-        margin-right: 0.2rem;
-    }
-}
+ .dropdown-content {
+     display: none;
+     position: absolute;
+     background-color: #f9f9f9;
+     min-width: 160px;
+     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+     z-index: 1;
+     opacity: 0;
+     transition: opacity 0.4s;
+ }
 
-.card:hover {
-    transform: scale(1.04);
-}
+ .dropdown-content button {
+     color: black;
+     padding: 12px 16px;
+     text-decoration: none;
+     display: block;
+     background-color: white;
+     border: none;
+     width: 100%;
+     text-align: left;
+     transition: background-color 0.4s;
+ }
 
-.card:hover img {
-    transform: scale(1.08);
-}
+ .dropdown-content button:hover {
+     background-color: #ddd;
+ }
 
-.card:hover .card-text {
-    opacity: 1;
-    bottom: 2.3rem;
-}
+ .dropdown:hover .dropdown-content {
+     display: block;
+     opacity: 1;
+ }
 
-.card .img-container img {
-    height: 210px;
-    transition: 0.4s ease;
-}
+ .dropbtn {
+     background: white;
+     color: black;
+     padding: 3px 5px;
+     font-size: 16px;
+     border: 2px solid black;
+     border-radius: 30px;
+     cursor: pointer;
+     transition: 0.4s;
+ }
 
-.card-text {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.3rem 0.8rem;
-    position: absolute;
-    bottom: 1rem;
-    opacity: 0;
-    transition: 0.6s;
-    width: 100%;
-    height: 75px;
-    background: linear-gradient(0deg, white 40%, transparent 100%);
-}
+ .dropbtn:hover,
+ .dropbtn:focus {
+     background: black;
+     color: white;
+ }
 
-.card-text h3 {
-    font-size: 1.2rem;
-    padding-right: 4px;
-}
+ .product-list button:hover {
+     background: black;
+     color: white;
+ }
 
-.card-text span {
-    background: rgb(228, 50, 37);
-    font-weight: bold;
-    padding: 4px 6px;
-    color: white;
-    border-radius: 4px;
-}
+ .card-container {
+     margin: 0 20px;
+     display: flex;
+     flex-wrap: wrap;
+ }
 
-.add-to-cart {
-    text-align: center;
-}
+ .card {
+     margin: 0.4rem 1rem 0.4rem 0;
+     background: rgb(255, 255, 255);
+     border-radius: 4px;
+     overflow: hidden;
+     position: relative;
+     box-shadow: 0 0px 6px rgba(51, 51, 51, 0.15);
+     transition: 0.2s ease;
+     width: 202px;
+ }
 
-@media screen and (max-width: 420px) {
-    .card-container {
-        margin: 0 5px 0 5px;
-    }
-}
+ @media screen and (max-width: 600px) {
+     .card {
+         margin-right: 0.2rem;
+     }
+ }
+
+ .card:hover {
+     transform: scale(1.04);
+ }
+
+ .card:hover img {
+     transform: scale(1.08);
+ }
+
+ .card:hover .card-text {
+     opacity: 1;
+     bottom: 2rem;
+ }
+
+ .card .img-container img {
+     height: 210px;
+     transition: 0.4s ease;
+ }
+
+ .card-text {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 0.3rem 0.8rem;
+     position: absolute;
+     bottom: 1rem;
+     opacity: 0;
+     transition: 0.6s;
+     width: 100%;
+     height: 75px;
+     background: linear-gradient(0deg, white 40%, transparent 100%);
+ }
+
+ .card-text h3 {
+     font-size: 1.2rem;
+     padding-right: 4px;
+ }
+
+ .card-text span {
+     background: rgba(75, 138, 162, 1);
+     font-weight: bold;
+     padding: 4px 6px;
+     color: white;
+     border-radius: 4px;
+ }
+
+ .add-to-cart {
+     text-align: center;
+ }
+
+ .add-to-cart button {
+     position: relative;
+     z-index: 10;
+     margin-bottom: 5px;
+     background: white;
+     border: 2px solid black;
+     border-radius: 30px;
+     margin: 5px 1px;
+     padding: 3px 5px;
+     transition: 0.4s;
+ }
+
+ .add-to-cart button:hover {
+     background: black;
+     color: white;
+
+ }
+
+ @media screen and (max-width: 844px) {
+     .product-list {
+         margin: 0;
+     }
+ }
+
+ @media screen and (max-width: 570px) {
+     .card-container {
+         margin: 0 5px 0 5px;
+     }
+ }
